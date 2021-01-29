@@ -1,6 +1,15 @@
 * {margin:0;padding:0;}
 li{list-style: none;}
+.clearfix:after {content:""; display:block; clear:both; visibility:hidden; line-height:0; height:0;}
+.clearfix {display:block;}
 
 .search img{display:inline-block;width:100%;max-width: 80px;}
 .search form{display:inline-block;vertical-align: top;}
 .search form input{height: 30px;}
+
+.video-list{width:100%;}
+.video-list li{float: left;width: 50%;}
+.video-list li a{display: block;width: 100%;max-height: 200px;overflow: hidden;}
+.video-list li a > div{float: left;}
+.video-list li a .img_wrap{width: 40%;}
+.video-list li a .txt_wrap{width: 60%;text-overflow: ellipsis;}

@@ -4,7 +4,7 @@ const VideoList = ({itemList, }) => {
  
     return (
         <li>
-           <a>
+           <a className="clearfix">
                <div className="img_wrap">
                     <img src={itemList.thumbnails.default.url} alt={itemList.title} />
                </div>
