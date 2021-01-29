@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
-const VideoList = () => {
+const VideoList = ({itemList, }) => {
+ 
     return (
         <li>
            <a>
-               <div>thumbnail image</div>
+               <div className="img_wrap">
+                    <img src={itemList.thumbnails.default.url} alt={itemList.title} />
+               </div>
                <div className="txt_wrap">
-                   <p>title</p>
-                   <p>desc</p>
+                   <p>{itemList.title}</p>
+                   <p>{itemList.description}</p>
                </div>
            </a>
         </li>
