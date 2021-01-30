@@ -13,7 +13,9 @@ const App = () => {
     
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=AIzaSyD_A-MIp774wIMuIm-fPIAPnZaJvG6aVx0`, requestOptions)
       .then(response => response.json())
-      .then(result => setVideos(result.items))
+      // 검색 api는 기존 api와 달라서 걸러서 기존 있는 아이템 정보 유지하고 id를 object 안에 있는 videoID로 덮어줌
+      .then(result => result.items.map(item => ({...item, id: item.id.videoId})))
+      .then(items => setVideos(items))
       .catch(error => console.log('error', error));
   }
 
