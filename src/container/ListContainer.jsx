@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
 import VideoList from '../components/VideoList';
+import styles from './ListContainer.module.css';
 
-const ListContainer = ({landingData, }) => {
+const ListContainer = ({videos, }) => {
 
-    const data = landingData.data.items;
-    
     return (
-        <ul className="video-list clearfix">
+        <ul className={styles.videos}>
             {
-                data.map(item => {
-                    const itemList = item.snippet;
-                    
+                videos.map(video => {
                     return(
-                        <VideoList itemList={itemList}/>
+                        <VideoList video={video} key={video.id}/>
                     )
                 })
             }

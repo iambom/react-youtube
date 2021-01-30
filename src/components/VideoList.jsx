@@ -1,18 +1,17 @@
 import React, {useEffect} from 'react';
+import styles from './VideoList.module.css';
 
-const VideoList = ({itemList, }) => {
- 
+const VideoList = ({video : {snippet} }) => {
+    console.log(snippet)
     return (
-        <li>
-           <a className="clearfix">
-               <div className="img_wrap">
-                    <img src={itemList.thumbnails.default.url} alt={itemList.title} />
-               </div>
-               <div className="txt_wrap">
-                   <p>{itemList.title}</p>
-                   <p>{itemList.description}</p>
-               </div>
-           </a>
+        <li className={styles.container}>
+            <div className={styles.video}>
+                <img className={styles.thumbnail} src={snippet.thumbnails.medium.url}/>
+                <div className={styles.metadata}>
+                    <p className={styles.title}>{snippet.title}</p>
+                    <p className={styles.channel}>{snippet.channelTitle}</p>
+                </div>
+            </div>
         </li>
     )
 }
